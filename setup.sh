@@ -63,6 +63,7 @@ setup() {
     espeak "compiling PS move API components"
     mkdir build
     cd build
+    git reset --hard aed4e220cc80e9dd6c57605eb727daf22d6bae5d
     cmake .. \
         -DPSMOVE_BUILD_CSHARP_BINDINGS:BOOL=OFF \
         -DPSMOVE_BUILD_EXAMPLES:BOOL=OFF \
@@ -83,7 +84,7 @@ setup() {
     sudo cp -r $HOMEDIR/JoustMania/conf/supervisor/ /etc/
     
     #Use amixer to set sound output to 100%
-    amixer sset PCM,0 100%
+    amixer sset Master,0 100%
     sudo alsactl store
     
     #This will disable on-board bluetooth with the --disable_internal_bt command line option
